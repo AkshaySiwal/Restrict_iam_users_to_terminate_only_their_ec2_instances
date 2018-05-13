@@ -1,4 +1,4 @@
-# Restrict iam users to terminate/start/stop/reboot only their ec2 instances
+# Restrict IAM Users to Terminate/Start/Stop/Reboot only their EC2 Instances
 This repo will help you create IAM policies to control users start, stop, reboot, and terminate only instances which a user has launched across all EC2 instances under an account.
 
 Access to manage Amazon EC2 instances can be controlled using tags. You can do this by writing an Identity and Access Management (IAM) policy that grants users permissions to manage EC2 instances that have a specific tag. However, if you also give users permissions to create or delete tags, users can manipulate the values of the tags to gain access and manage additional instances.
@@ -102,9 +102,37 @@ This [CloudFormation template][main_scr] creates a Lambda function, and CloudWat
   <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png">
 </p>
 
+### Test IAM Policy
+After creating a stack with this [CloudFormation template][main_scr] a new IAM Group **```IAM_Group_To_Manage_EC2_Instances_v01```**  will get created with required policies, make users part of this group and create an EC2 instance with one such user to test it.
+
+Now go to EC2 Dashboard and click on show/hide column icon.
+<p align="center">
+  <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/add_more_headers.png">
+</p>
+
+After clicking on show/hide column icon you will see two new tags **```Owner```** and **```PrincipalId```**, check both of these tags.
+<p align="center">
+  <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/see_new_headers.png">
+</p>
+
+<p align="center">
+  <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/after_check_new_headers.png">
+</p>
+
+Now you will get to see ```Owner``` and ```PrincipalId``` columns with there respective values under EC2 Dashboard.
+<p align="center">
+  <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/ins_with_new_headers.png">
+</p>
+
+ANd if you try to Stop/Start/Reboot/Terminate any EC2 Instance which does not belong to you, you will get an error saying **```You are not authorized to perform this operation.```**
+
+<p align="center">
+  <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/error.png">
+</p>
 
 <br><br>
 <br><br>
+
 ## References
 - [References 1][r1]
 - [References 2][r2]
