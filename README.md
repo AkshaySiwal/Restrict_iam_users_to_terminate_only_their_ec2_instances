@@ -92,4 +92,4 @@ This CloudFormation template creates a Lambda function, and CloudWatch Events tr
 
 >**Note** : Currently, CloudWatch Events is available in six regions, and Lambda is available in five regions. Keep in mind that you can only use this post’s solution in regions where both CloudWatch Events and Lambda are available. As these services grow, you will be able to launch the same template in other regions as well.
 
-<a href="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png"><img align="center" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png" width="60%" alt="Cloud Formation Design"/></a>
+<a align="center" href="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png"><img  src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png" width="60%" alt="Cloud Formation Design"/></a>
