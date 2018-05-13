@@ -87,6 +87,7 @@ For a full list of values that you can substitute for policy variables, see Requ
 - ```Owner```, with the current ```userName```.
 - ```PrincipalId```, with the current user’s ```aws:userid``` value.
 
+
 <p align="center">
   <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/AutoTag_steps.png">
 </p>
@@ -94,12 +95,24 @@ For a full list of values that you can substitute for policy variables, see Requ
 ### CloudFormation automation
 This [CloudFormation template][main_scr] creates a Lambda function, and CloudWatch Events trigger that function in the region you choose. Lambda permissions to describe and tag EC2 resources are obtained from an IAM role the template creates along with the function. The template also creates an IAM group into which you can place your user to enforce the behavior described in this blog post. The template also creates a customer managed policy so that you can easily apply it to other IAM entities, such as IAM roles or other existing IAM groups.
 
->**Note** : Currently, CloudWatch Events is available in six regions, and Lambda is available in five regions. Keep in mind that you can only use this post’s solution in regions where both CloudWatch Events and Lambda are available. As these services grow, you will be able to launch the same template in other regions as well.
+>**Note** : Currently, CloudWatch Events is available in [six regions][cloudwatch], and Lambda is available in [five regions][lambda]. Keep in mind that you can only use this post’s solution in regions where both CloudWatch Events and Lambda are available. As these services grow, you will be able to launch the same template in other regions as well.
 
 
 <p align="center">
   <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/Akshay_Cloud_Formation_v01-designer.png">
 </p>
+
+
+<br><br>
+<br><br>
+## References
+- [References 1][r1]
+- [References 2][r2]
+- [References 3][r3]
+- [References 4][r4]
+- [References 5][r5]
+
+
 
 ## Getting Help
 
@@ -112,4 +125,10 @@ For any help feel free to contact me on [LinkedIn][linkedin-url] or [Facebook][f
 [facebook-url]: https://www.facebook.com/akshay.siwal.5
 [linkedin-url]: https://www.linkedin.com/in/akshay-siwal-4b08b916/
 [main_scr]: https://raw.githubusercontent.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/master/CloudFormation_template/Akshay_Cloud_Formation_v01.json
-
+[cloudwatch]:https://docs.aws.amazon.com/general/latest/gr/rande.html#cwe_region
+[lambda]:https://docs.aws.amazon.com/general/latest/gr/rande.html#lambda_region
+[r1]:https://aws.amazon.com/blogs/security/resource-level-permissions-for-ec2-controlling-management-access-on-specific-instances/
+[r2]:https://aws.amazon.com/blogs/aws/resource-permissions-for-ec2-and-rds-resources/
+[r3]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html
+[r4]:https://aws.amazon.com/blogs/security/how-to-automatically-tag-amazon-ec2-resources-in-response-to-api-events/
+[r5]:https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#policy-vars-infotouse
