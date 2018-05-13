@@ -124,7 +124,7 @@ Now you will get to see ```Owner``` and ```PrincipalId``` columns with there res
   <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/ins_with_new_headers.png">
 </p>
 
-ANd if you try to Stop/Start/Reboot/Terminate any EC2 Instance which does not belong to you, you will get an error saying **```You are not authorized to perform this operation.```**
+And if you try to Stop/Start/Reboot/Terminate any EC2 Instance which does not belong to you, you will get an error saying **```You are not authorized to perform this operation.```**
 
 <p align="center">
   <img width="60%" src="https://github.com/AkshaySiwal/Restrict_iam_users_to_terminate_only_their_ec2_instances/blob/master/images/error.png">
