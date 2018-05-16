@@ -159,7 +159,7 @@
                     }
                 },
                 "Description": "This function tags EC2 Resources in response to Cloudwatch Events.",
-                "Handler": "lambda_function.lambda_handler",
+                "Handler": "index.lambda_handler",
                 "Role": {
                     "Fn::GetAtt": [
                         "RoleForLambdaToAutoTagv01",
