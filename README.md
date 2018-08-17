@@ -108,7 +108,7 @@ This [Terraform][main_scr_2] does the same thing as of CloudFormation automation
 </p>
 
 ### Test IAM Policy
-After creating a stack with this [CloudFormation template][main_scr] a new IAM Group **```IAM_Group_To_Manage_EC2_Instances_v01```**  will get created with required policies, make users part of this group and create an EC2 instance with one such user to test it.
+After creating a stack with this [CloudFormation template][main_scr] or [Terraform][main_scr_2] a new IAM Group **```IAM_Group_To_Manage_EC2_Instances_v01```**  will get created with required policies, make users part of this group and create an EC2 instance with one such user to test it.
 
 Now go to EC2 Dashboard and click on show/hide column icon.
 <p align="center">
